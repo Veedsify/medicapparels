@@ -84,3 +84,37 @@ handleProductAction(".delete-product", "warning", "Are you sure you want to reje
 handleProductAction(".accept-product", "success", "Are you sure you want to approve this product?", "btn-success", "DELETE");
 handleProductAction(".hide-product", "success", "Are you sure you want to hide this product on the home page?", "btn-success", "POST");
 handleProductAction(".show-product", "success", "Are you sure you want to show this product on the home page?", "btn-success", "PATCH");
+
+
+const handleUserDelete = async (selector, icon, text, confirmBtnClass, method) => {
+  document.querySelectorAll(selector).forEach((el) => {
+    el.addEventListener("click", async () => {
+      const result = await swal({
+        icon,
+        text,
+        buttons: {
+          cancel: true,
+          confirm: {
+            text: "Yes",
+            className: `${confirmBtnClass} shadow-0`,
+          },
+        },
+      });
+      if (result == true) {
+        const userid = el.getAttribute("data-product");
+        try {
+          const response = await axios({
+            method,
+            url: "/admin/user/status",
+            data: { userid },
+          });
+          console.log(response);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    });
+  });
+};
+
+handleUserDelete(".delete-user", "warning", "Are you sure you want to delete this user?", "btn-danger", "PUT");
