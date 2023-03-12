@@ -4,8 +4,8 @@ const router = express.Router();
 router.get('/',(req, res)=>{
     res.render('admin/product')
 })
-router.get('/servers',(req, res)=>{
-    res.render('admin/configure-servers')
+router.get('/payment',(req, res)=>{
+    res.render('admin/configure-payments')
 })
 router.get('/email',(req, res)=>{
     res.render("admin/configure-email");

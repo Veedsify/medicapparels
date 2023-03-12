@@ -6,6 +6,7 @@ const productsRouter = require('./products')
 const blogRouter = require('./blog')
 const profileRouter = require('./profile')
 const configurationRouter = require('./configuration')
+const userRouter = require('./user')
 const path = require('path')
 
 
@@ -14,6 +15,7 @@ router.use('/register', registerRouter)
 router.use('/product', productsRouter)
 router.use('/blog', blogRouter)
 router.use('/profile', profileRouter)
+router.use('/user', userRouter)
 router.use('/configuration', configurationRouter)
 
 router.get('/',(req,res)=>{
