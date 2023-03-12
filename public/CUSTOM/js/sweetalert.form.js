@@ -27,3 +27,27 @@ function categoryForm(url,method) {
                         </div>`;
     return holder
 }
+
+function getRoles(userData, user){
+    let holder = document.createElement('div')
+    holder.innerHTML =`
+        <form action="/admin/user/roles/${userData}" method="POST">
+        <div class="form-group p-3">
+        <label>
+        <img src="${user.image}" class="ob-fit-square img-fluid rounded rounded-circle" width="100">
+        </label>
+        <h4 class="mb-3">${user.fullname}</h4>
+        <label class="d-block text-left">
+            Set Role
+            <select type="text" class="form-control">
+                <option value="user" >User</option>
+                <option value="vendor" >Vendor</option>
+                <option value="vendor" >Manager</option>
+            </select>
+        </label>
+        <input type="submit" value="Update" class="btn btn-sm btn-success w-100">
+        </div>
+        </form>
+    `
+    return holder
+}
