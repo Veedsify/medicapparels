@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Medic Aparrels -</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A premium admin dashboard template by"
+      name="description"
+    />
+    <meta content="Medic Aparrels" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/ADMIN/images/favicon.ico" />
+
+    <!-- App css -->
+    <link
+      href="/ADMIN/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/ADMIN/css/icons.css" rel="stylesheet" type="text/css" />
+    <link
+      href="/ADMIN/css/metisMenu.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/ADMIN/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Top Bar Start -->
+    <%- include('includes/top-bar') %>
+    <!-- Top Bar End -->
+
+    <div class="page-wrapper">
+      <!-- Page Content-->
+      <div class="page-content">
+        <div class="container-fluid">
+          <!-- Page-Title -->
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="float-right">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="javascript:void(0);">Medic Aparrels</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a href="javascript:void(0);">Configuration</a>
+                    </li>
+                    <li class="breadcrumb-item active">Mail Servers</li>
+                  </ol>
+                  <!--end breadcrumb-->
+                </div>
+                <!--end /div-->
+                <h4 class="page-title">Server Configurations</h4>
+              </div>
+              <!--end page-title-box-->
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+          <!-- end page title end breadcrumb -->
+        </div>
+        <!-- container -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+
+                <form action="" method="POST">
+                  <div class="form-group">
+                    <label class="d-block mb-2 text-muted fw-bold">
+                      SMTP Host:
+                    </label>
+                    <input type="text" minlength="5" maxlength="50" required name="adminEmail" class="form-control" id="adminEmail" placeholder="example@mail.com">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="d-block mb-2 text-muted fw-bold">
+                      SMTP port:
+                    </label>
+                    <input type="text" minlength="5" maxlength="50" required name="adminEmail" class="form-control" id="adminEmail" placeholder="example@mail.com">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="d-block mb-2 text-muted fw-bold">
+                     SMTP user:
+                    </label>
+                    <input type="text" minlength="5" maxlength="50" required name="adminEmail" class="form-control" id="adminEmail" placeholder="example@mail.com">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="d-block mb-2 text-muted fw-bold">
+                      SMTP Password:
+                    </label>
+                    <input type="password" minlength="5" maxlength="50" required name="adminEmail" class="form-control" id="adminEmail" placeholder="example@mail.com">
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" name="adminEmail" class="btn btn-success w-100 btn-lg" >Save <i class="mdi mdi-content-save"></i></button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+      <!-- end page content -->
+      <footer class="footer text-center text-sm-left">
+        <div class="boxed-footer">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Medic Aparrels
+          <span class="text-muted d-none d-sm-inline-block float-right"
+            >Crafted with <i class="mdi mdi-heart text-danger"></i> by
+            <a href="http://veedsify.com" target="_blank">Veedsify</a</span
+          >
+        </div>
+      </footer>
+      <!--end footer-->
+    </div>
+    <!-- end page-wrapper -->
+
+    <!-- jQuery  -->
+    <script src="/ADMIN/js/jquery.min.js"></script>
+    <script src="/ADMIN/js/bootstrap.bundle.min.js"></script>
+    <script src="/ADMIN/js/metisMenu.min.js"></script>
+    <script src="/ADMIN/js/waves.min.js"></script>
+    <script src="/ADMIN/js/jquery.slimscroll.min.js"></script>
+    <script src="/CUSTOM/js/axios.min.js"></script>
+    <script src="/CUSTOM/js/sweetalert.form.js"></script>
+    <script src="/CUSTOM/js/sweetalert.min.js"></script>
+
+    <!-- App js -->
+    <script src="/ADMIN/js/app.js"></script>
+    <script src="/CUSTOM/js/adminScript.js"></script>
+  </body>
+</html>

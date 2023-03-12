@@ -1,5 +1,5 @@
 /**
- * Theme: Metrica - Responsive Bootstrap 4 Admin Dashboard
+ * Theme: Metrica - 
  * Author: Mannatthemes
  * Timeout Js
  */

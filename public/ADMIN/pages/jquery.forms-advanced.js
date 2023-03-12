@@ -1,5 +1,5 @@
 /**
- * Theme: Frogetor - Responsive Bootstrap 4 Admin Dashboard
+ * Theme: Medic Aparrels - 
  * Author: Mannatthemes
  * Form Advanced Js
  */

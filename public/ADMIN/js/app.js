@@ -1,5 +1,5 @@
 /**
- * Theme: Metrica - Responsive Bootstrap 4 Admin Dashboard
+ * Theme: Metrica - 
  * Author: Mannatthemes
  * Module/App: Main Js
  */
@@ -21,7 +21,7 @@
         });
     }
 
-   
+
     function initEnlarge() {
         if ($(window).width() < 1025) {
             $('body').addClass('enlarge-menu');
@@ -58,7 +58,7 @@
             }
         });
     }
-    
+
 
     function init() {
         initSlimscroll();
@@ -71,3 +71,39 @@
     init();
 
 })(jQuery)
+
+// Get all option buttons and bind a click event listener to each one
+document.querySelectorAll('.variation .option').forEach(function (option) {
+    option.addEventListener('click', function () {
+        // Remove active class from all siblings
+        this.parentNode.querySelectorAll('.option').forEach(function (sibling) {
+            sibling.classList.remove('active');
+        });
+        // Add active class to clicked button
+        this.classList.add('active');
+        // Update hidden input value
+        var input = this.closest('.variation').querySelector('input[type="hidden"]');
+        input.value = this.getAttribute('data-value');
+    });
+});
+
+
+let prevFile = document.querySelectorAll('#prev-file')
+
+prevFile.forEach(input => {
+    input.addEventListener('change', (e) => {
+        let parent = input.closest('label')
+        let image = parent.querySelector('img')
+        let url = URL.createObjectURL(input.files[0])
+        image.src = url
+    })
+})
+
+const videoInput = document.querySelector('#video');
+const myVideo = document.querySelector('#video-source, #my-video');
+
+videoInput?.addEventListener('change', ({ target: { files } }) => {
+    const url = URL.createObjectURL(files[0]);
+    myVideo.src = url;
+    console.log(myVideo)
+});
