@@ -1,4 +1,6 @@
-﻿.theme-color-1 {
+﻿@import url(Custom-Home.css);
+
+.theme-color-1 {
     --theme-color: #ff4c3b
 }
 
@@ -5993,7 +5995,7 @@ button.btn.btn-outline:active {
 }
 
 .game-back {
-    background-image: url("../../../originals/e0/80/08/e08008c19c8e9e1b0074baf36d699407.jpg");
+    /*background-image: url("");*/
     background-blend-mode: overlay;
     background-color: rgba(0, 0, 0, 0.6)
 }
@@ -41024,3 +41026,5 @@ body.rtl .account-setting {
         padding-right: 10px
     }
 }
+
+

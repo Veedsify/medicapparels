@@ -85,7 +85,7 @@ handleProductAction(".hide-product", "success", "Are you sure you want to hide t
 handleProductAction(".show-product", "success", "Are you sure you want to show this product on the home page?", "btn-success", "PATCH");
 
 
-const handleUserDelete = async (selector, icon, text, confirmBtnClass, method) => {
+const handleUserStatus = async (selector, icon, text, confirmBtnClass, method) => {
     document.querySelectorAll(selector).forEach((el) => {
         el.addEventListener("click", async () => {
             const result = await swal({
@@ -116,7 +116,9 @@ const handleUserDelete = async (selector, icon, text, confirmBtnClass, method) =
     });
 };
 
-handleUserDelete(".delete-user", "warning", "Are you sure you want to delete this user?", "btn-danger", "PUT");
+handleUserStatus(".delete-user", "warning", "Are you sure you want to delete this user?", "btn-danger", "DELETE");
+
+handleUserStatus(".delete-regular-user", "warning", "Are you sure you want to delete this user?", "btn-danger", "DELETE");
 
 const handleUserRoles = async (selector, confirmBtnClass, method) => {
     for (const el of document.querySelectorAll(selector)) {
@@ -133,22 +135,43 @@ const handleUserRoles = async (selector, confirmBtnClass, method) => {
                     cancel: true,
                 },
             });
-            if (result === true) {
-                const userid = el.getAttribute("data-product");
-                try {
-                    const response = await axios({
-                        method,
-                        url: "/admin/user/status",
-                        data: {userid},
-                    });
-                    console.log(response);
-                } catch (error) {
-                    console.error(error);
-                }
-            }
         });
     }
 };
 
-
 handleUserRoles(".edit-user", "btn-danger", "POST");
+
+const hnadleUserStatus = async (selector, confirmBtnClass, method) => {
+    for (const el of document.querySelectorAll(selector)) {
+        const userData = el.getAttribute("data-users")
+        el.addEventListener("click", async () => {
+            const result = await swal({
+                content: getUserStatus(userData),
+                buttons: {
+                    cancel: true,
+                },
+            });
+        });
+    }
+};
+
+hnadleUserStatus(".update-user", "btn-success", "POST");
+
+
+//VENDOR PAGES
+
+let addVendor = document.querySelector('#add-vendor')
+
+
+if(addVendor){
+    addVendor.addEventListener('click',()=>{
+        swal({
+            title: 'Add a Vendor',
+            content: addVendorHtml(),
+            button:{
+                cancel: true
+            }
+        })
+    })
+}
+

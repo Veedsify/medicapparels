@@ -51,3 +51,57 @@ function getRoles(userData, user){
     `
     return holder
 }
+
+function getUserStatus(userData) {
+    let holder = document.createElement('div')
+    holder.innerHTML = `
+        <form action="/admin/user/status/${userData}" method="POST">
+        <div class="form-group p-3">
+        <h2>Set User Status</h2>
+        <label class="d-block text-left">
+            Set Role
+            <select type="text" class="form-control">
+                <option value="user" >Active</option>
+                <option value="vendor" >Deactivated</option>
+                <option value="vendor" >Restricted</option>
+            </select>
+        </label>
+        <input type="submit" value="Update" class="btn btn-sm btn-success w-100">
+        </div>
+        </form>
+    `
+    return holder
+}
+
+
+
+function addVendorHtml() {
+    let holder = document.createElement('div')
+    
+    holder.innerHTML = `
+        <form action="  ">
+  <div class="form-group text-left">
+    <label>Vendor Name:</label>
+    <input type="text" name="txte" class="form-control" id="">
+  </div> 
+  <div class="form-group text-left">
+    <label>Vendor Description:</label>
+  <textarea type="text" name="txte" class="form-control p-2" id="elm1"></textarea>
+  </div>
+  <div class="form-group text-left">
+    <label>Vendor User:</label>
+    <input type="text" name="txte" class="form-control" id="">
+  </div>
+  <div class="form-group text-left">
+    <label>Vendor Email:</label>
+    <input type="text" name="txte" class="form-control" id="">
+  </div>
+  <div class="form-group text-left">
+    <label>Vendor Password:</label>
+    <input type="text" name="txte" class="form-control" id="">
+  </div>
+</form>
+    `
+    
+    return holder
+}

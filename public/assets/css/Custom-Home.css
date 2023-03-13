@@ -1,0 +1,7 @@
+.preloader-body{
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000;
+}
